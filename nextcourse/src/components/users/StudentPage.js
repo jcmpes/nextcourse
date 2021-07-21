@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import userPortrait from '../../assets/img/user.png';
+import Image from 'next/image';
 
 const StudentPage = ({ username }) => {
   const { t } = useTranslation(['global']);
@@ -11,7 +12,7 @@ const StudentPage = ({ username }) => {
       <div className="user-profile-section">
         <div className="user-profile-data">
           <div className="user-picture">
-            <img src={userPortrait} alt="user portrait" width="80" />
+            <Image src={userPortrait} alt="user portrait" width="80" />
           </div>
           <div className="user-details">
             <h1>{username}</h1>
@@ -21,17 +22,25 @@ const StudentPage = ({ username }) => {
 
         <div className="user-profile-nav">
           <ul>
-            <Link to="/" className="my-profile-nav-item">
-              {t('users.learning')}
+            <Link href="/" className="my-profile-nav-item">
+              <a>
+                {t('users.learning')}
+              </a>
             </Link>
-            <Link to="/" className="my-profile-nav-item">
-              {t('users.wishlist')}
+            <Link href="/" className="my-profile-nav-item">
+              <a>
+                {t('users.wishlist')}
+              </a>
             </Link>
-            <Link to="/" className="my-profile-nav-item">
-              {t('users.chats')}
+            <Link href="/" className="my-profile-nav-item">
+              <a>
+                {t('users.chats')}
+              </a>
             </Link>
-            <Link to="/" className="my-profile-nav-item">
-              {t('users.edit profile')}
+            <Link href="/" className="my-profile-nav-item">
+              <a>
+                {t('users.edit profile')}
+              </a>
             </Link>
           </ul>
         </div>

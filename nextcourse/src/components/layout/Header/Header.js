@@ -8,6 +8,7 @@ import { authLogout } from '../../../store/actions/logout';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import FiltersForm from '../../FiltersForm/FiltersForm';
+import Image from 'next/image';
 
 const Header = () => {
   const { isLogged } = useSelector(getAuth)
@@ -33,34 +34,52 @@ const Header = () => {
   return (
     <header className="header">
       <Link href="/">
-        <Button>{t('header.home')}</Button>
+        <a>
+          <Button>{t('header.home')}</Button>
+        </a>
       </Link>
       <Link href="/register">
-        <Button>{t('header.register')}</Button>
+        <a>
+          <Button>{t('header.register')}</Button>
+        </a>
       </Link>
 
       {isLogged ? (
         <Button onClick={handleLogoutClick}>{t('header.log out')}</Button>
       ) : (
         <Link href="/login">
-          <Button>{t('header.log in')}</Button>
+          <a>
+            <Button>{t('header.log in')}</Button>
+          </a>
         </Link>
       )}
 
-      <Button type="text" onClick={switchLanguage}>
-        en
-      </Button>
-      <Button type="text" onClick={switchLanguage}>
-        es
-      </Button>
+      <Link href="/" locale="en">
+        <a>
+          <Button type="text" onClick={switchLanguage}>
+            en
+          </Button>
+        </a>
+      </Link>
+      <Link href="/" locale="es">
+        <a>
+          <Button type="text" onClick={switchLanguage}>
+            es
+          </Button>
+        </a>
+      </Link>
 
       <br />
       <Link href="/create">
-        <Button>{t('header.create')}</Button>
+        <a>
+          <Button>{t('header.create')}</Button>
+        </a>
       </Link>
 
       <Link href="/user">
-        <Button>{t('header.user')}</Button>
+        <a>
+          <Button>{t('header.user')}</Button>
+        </a>
       </Link>
       <FiltersForm />
     </header>
