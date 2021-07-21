@@ -1,7 +1,6 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-import userPortrait from '../../assets/img/user.png';
+import userPortrait from '../../../public/img/user.png';
 import Image from 'next/image';
 
 const StudentPage = ({ username }) => {
