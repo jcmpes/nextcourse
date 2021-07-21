@@ -7,6 +7,8 @@ import '../src/config/i18next-config';
 import '../styles/globals.css'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { loginWithToken } from '../src/api/auth';
+import { configureClient } from '../src/api/client';
 
 const accessToken = storage.get('auth');
 

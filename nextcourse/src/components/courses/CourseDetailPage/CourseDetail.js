@@ -7,7 +7,7 @@ function CourseDetail({ title, video, description, content, image }) {
   return (
     <div className="detail-container">
       <div className="detail-image">
-        <Image style={{ width: '150px', height: '150px' }} src={image} alt=""/>
+        <Image width='150px' height='150px' src={image} alt=""/>
       </div>
       <div className="detail-title">{title}</div>
       <div className="detail-description">{description}</div>
