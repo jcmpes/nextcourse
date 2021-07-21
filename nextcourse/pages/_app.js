@@ -5,6 +5,8 @@ import storage from '../src/utils/storage';
 import '../src/config/i18next-config';
 
 import '../styles/globals.css'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const accessToken = storage.get('auth');
 
@@ -43,6 +45,7 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <Layout>
         <Component {...pageProps} />
+        <ToastContainer position={toast.POSITION.BOTTOM_RIGHT} />
       </Layout>
     </Provider>
   )
