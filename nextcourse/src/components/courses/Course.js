@@ -13,8 +13,10 @@ const Course = ({ course, me, faved }) => {
     <div className="course-wrapper" key={course._id}>
       <br />
       Title:{' '}
-      <Link className="course-title" to={`/courses/${course.slug}`}>
-        {course.title}
+      <Link href={`/courses/${course.slug}`}>
+        <a className="course-title">
+          {course.title}
+        </a>
       </Link>
       <br />
       Description: {course.description}

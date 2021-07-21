@@ -12,7 +12,8 @@ import { Button } from '../components/shared';
 import { useEffect, useState } from 'react';
 
 
-function TemporaryWelcomePage({ auth, onLogout, ...props }) {
+function TemporaryWelcomePage({ onLogout, ...props }) {
+  const auth = useSelector(getAuth)
   const { t, i18n } = useTranslation(['global']);
 
   const { loading, error } = useSelector(getUI);
