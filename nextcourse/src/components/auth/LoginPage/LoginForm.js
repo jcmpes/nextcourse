@@ -1,20 +1,21 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, FormField, Checkbox } from '../../shared';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
+import Link from 'next/link';
 
 const eye = <FontAwesomeIcon icon={faEye} />;
 const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
 
 function LoginForm({ onSubmit }) {
-  const [credentials, setCredentials] = React.useState({
+  const [credentials, setCredentials] = useState({
     email: '',
     password: '',
     remember: false,
   });
 
-  const [passwordShown, setPasswordShown] = React.useState(false);
+  const [passwordShown, setPasswordShown] = useState(false);
 
   const handleChange = (ev) => {
     setCredentials((oldCredentials) => ({
@@ -74,7 +75,9 @@ function LoginForm({ onSubmit }) {
           {t('log in')}
         </Button>
         <div className="password-forgotten">
-          <a href="/forgot-password">{t('forgot option')}</a>
+          <Link href="/forgot-password">
+            <a>{t('forgot option')}</a>
+          </Link>
         </div>
       </form>
     </div>
