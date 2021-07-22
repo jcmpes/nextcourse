@@ -5,6 +5,6 @@ module.exports = {
     defaultLocale: 'en'
   },
   images: {
-    domains: ['final-project-web-x.s3.amazonaws.com'],
+    domains: ['final-project-web-x.s3.amazonaws.com', 'localhost']
   }
 }
