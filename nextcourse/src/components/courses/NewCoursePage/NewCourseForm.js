@@ -6,7 +6,6 @@ import { FormField, Button, Input } from "../../../components/shared"
 
 function NewCourseForm({ onSubmit, categories }) {
   const { t } = useTranslation(['global']);
-  const { username } = useSelector(getAuth);
   const [image, setImage] = React.useState(null)
   const [courseDetails, setCourseDetails] = React.useState({
     'title': '',
@@ -14,7 +13,6 @@ function NewCourseForm({ onSubmit, categories }) {
     'category': '',
     'video': '',
     'content': '',
-    'user': username,
   });
 
   const handleChange = (ev) => {

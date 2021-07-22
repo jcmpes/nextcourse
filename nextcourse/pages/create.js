@@ -1,10 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
-import { postCourse } from "../src/api/courses";
 import { categoriesLoadAction } from "../src/store/actions/categories-load";
 import { getCategories } from "../src/store/selectors";
-import Layout from "../src/components/layout/Layout";
 import NewCourseForm from "../src/components/courses/NewCoursePage/NewCourseForm";
 import { createCourseAction } from "../src/store/actions/create-course";
 

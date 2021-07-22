@@ -20,9 +20,11 @@ const ResetPasswordPage = () => {
   };
 
   return (
+    <>
       <h1>{t('reset password.reset password')}</h1>
       <p>{t('reset password.please enter your new password')}</p>
       <ResetPasswordForm onSubmit={handleSubmit} />
+    </>
   );
 };
 

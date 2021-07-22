@@ -54,14 +54,14 @@ const Header = () => {
         </Link>
       )}
 
-      <Link href="/" locale="en">
+      <Link href="" locale="en">
         <a>
           <Button type="text" onClick={switchLanguage}>
             en
           </Button>
         </a>
       </Link>
-      <Link href="/" locale="es">
+      <Link href="" locale="es">
         <a>
           <Button type="text" onClick={switchLanguage}>
             es
