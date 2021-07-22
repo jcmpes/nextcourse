@@ -15,13 +15,13 @@ function Layout({ children, ...props }) {
   }, [darkMode]);
 
   return (
-    <div className="layout">
+    <div className="layout" data-theme={darkMode ? 'dark' : 'light'}>
       <Header {...props} />
       <MyButton onClick={toggleDarkMode}>
         {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
       </MyButton>
       <hr />
-      <div className="App" data-theme={darkMode ? 'dark' : 'light'}>
+      <div className="App" >
         <main>{children}</main>
       </div>
       <hr />

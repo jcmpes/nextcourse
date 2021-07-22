@@ -3,12 +3,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Button } from '../../shared';
 import { logout } from '../../../api/auth';
-import { getAuth, getIsLogged } from '../../../store/selectors';
+import { getAuth } from '../../../store/selectors';
 import { authLogout } from '../../../store/actions/logout';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import FiltersForm from '../../FiltersForm/FiltersForm';
-import Image from 'next/image';
 
 const Header = () => {
   const { isLogged } = useSelector(getAuth)
