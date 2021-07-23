@@ -1,7 +1,7 @@
 import { authLogout } from '../store/actions/logout';
 import { loadCoursesAction } from '../store/actions/load-courses';
 import { getAuth, getUI } from '../store/selectors';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { getCourses } from '../api/courses';
 import Course from '../components/courses/Course';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,17 +13,17 @@ import { useRouter } from 'next/router';
 
 function TemporaryWelcomePage() {
   const auth = useSelector(getAuth)
-  const { t, i18n } = useTranslation(['global']);
+  // const { t, i18n } = useTranslation(['global']);
 
   const { loading, error } = useSelector(getUI);
   const dispatch = useDispatch();
 
   const switchLanguage = (ev) => {
-    if (ev.target.innerHTML === 'Español') {
-      i18n.changeLanguage('es');
-    } else if (ev.target.innerHTML === 'English') {
-      i18n.changeLanguage('en');
-    }
+  //   if (ev.target.innerHTML === 'Español') {
+  //     i18n.changeLanguage('es');
+  //   } else if (ev.target.innerHTML === 'English') {
+  //     i18n.changeLanguage('en');
+  //   }
   };
 
   const { username, favs } = auth;
@@ -63,15 +63,15 @@ function TemporaryWelcomePage() {
             fontSize: 40,
           }}
         >
-          {t('welcome to')}
-          {t('title')}
+          {('welcome to')}
+          {('title')}
           {username ? `, ${username}` : ''}
         </div>
 
-        <div>{t('headline')}</div>
+        <div>{('headline')}</div>
 
         <p>
-          Current language: <strong>{i18n.language}</strong>
+          {/* Current language: <strong>{i18n.language}</strong> */}
         </p>
         <Button onClick={switchLanguage}>{'English'}</Button>
         <Button onClick={switchLanguage}>{'Español'}</Button>

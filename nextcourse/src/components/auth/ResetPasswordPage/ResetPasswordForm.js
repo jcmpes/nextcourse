@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { Button } from '../../shared';
 import FormField from '../../shared/FormField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,7 +14,7 @@ const ResetPasswordForm = ({ onSubmit }) => {
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [passwordShown, setPasswordShown] = useState(false);
 
-  const { t } = useTranslation(['global']);
+  // const { t } = useTranslation(['global']);
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -45,7 +45,7 @@ const ResetPasswordForm = ({ onSubmit }) => {
         <div className="pwd-container">
           <FormField
             type={passwordShown ? 'text' : 'password'}
-            label={t('password')}
+            label={('password')}
             name="password"
             value={password}
             onChange={handleChange}
@@ -54,7 +54,7 @@ const ResetPasswordForm = ({ onSubmit }) => {
         <div className="pwd-confirm-container">
           <FormField
             type={passwordShown ? 'text' : 'password'}
-            label={t('reset password.confirm password')}
+            label={('reset password.confirm password')}
             name="password-confirm"
             value={passwordConfirm}
             onChange={handleChange}
@@ -66,7 +66,7 @@ const ResetPasswordForm = ({ onSubmit }) => {
           )}
         </div>
         <Button type="submit" disabled={!password | !passwordConfirm}>
-          {t('submit')}
+          {('submit')}
         </Button>
       </form>
     </div>

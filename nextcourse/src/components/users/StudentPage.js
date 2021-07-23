@@ -1,10 +1,10 @@
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import userPortrait from '../../../public/img/user.png';
 import Image from 'next/image';
 
 const StudentPage = ({ username }) => {
-  const { t } = useTranslation(['global']);
+  // const { t } = useTranslation(['global']);
 
   return (
     <>
@@ -15,7 +15,7 @@ const StudentPage = ({ username }) => {
           </div>
           <div className="user-details">
             <h1>{username}</h1>
-            <p>{t('users.student')}</p>
+            <p>{('users.student')}</p>
           </div>
         </div>
 
@@ -24,7 +24,7 @@ const StudentPage = ({ username }) => {
             <li>
               <Link href="" className="my-profile-nav-item">
               <a>
-                {t('users.learning')}
+                {('users.learning')}
               </a>
               </Link>
             </li>
@@ -32,21 +32,21 @@ const StudentPage = ({ username }) => {
             <li>
               <Link href="" className="my-profile-nav-item">
               <a>
-                {t('users.wishlist')}
+                {('users.wishlist')}
               </a>
               </Link>
             </li>
             <li>
               <Link href="" className="my-profile-nav-item">
               <a>
-                {t('users.chats')}
+                {('users.chats')}
               </a>
               </Link>
             </li>
             <li>
               <Link href="" className="my-profile-nav-item">
               <a>
-                {t('users.edit profile')}
+                {('users.edit profile')}
               </a>
               </Link>
             </li>

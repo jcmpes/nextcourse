@@ -6,7 +6,7 @@ import { logout } from '../../../api/auth';
 import { getAuth } from '../../../store/selectors';
 import { authLogout } from '../../../store/actions/logout';
 import { useDispatch, useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import FiltersForm from '../../FiltersForm/FiltersForm';
 
 const Header = () => {
@@ -20,30 +20,30 @@ const Header = () => {
     history.push('/');
   };
 
-  const { t, i18n } = useTranslation(['global']);
+  // const { t, i18n } = useTranslation(['global']);
   const switchLanguage = (ev) => {
-    // TODO: improve this function getting available languages dinamically
-    if (ev.target.innerHTML === 'es') {
-      i18n.changeLanguage('es');
-    } else if (ev.target.innerHTML === 'en') {
-      i18n.changeLanguage('en');
-    }
+  //   // TODO: improve this function getting available languages dinamically
+  //   if (ev.target.innerHTML === 'es') {
+  //     i18n.changeLanguage('es');
+  //   } else if (ev.target.innerHTML === 'en') {
+  //     i18n.changeLanguage('en');
+  //   }
   };
 
   return (
     <header className="header">
       <Link href="/" passHref>
-        <Button>{t('header.home')}</Button>
+        <Button>{('header.home')}</Button>
       </Link>
       <Link href="/register" passHref>
-          <Button>{t('header.register')}</Button>
+          <Button>{('header.register')}</Button>
       </Link>
 
       {isLogged ? (
-        <Button onClick={handleLogoutClick}>{t('header.log out')}</Button>
+        <Button onClick={handleLogoutClick}>{('header.log out')}</Button>
       ) : (
         <Link href="/login" passHref>
-            <Button>{t('header.log in')}</Button>
+            <Button>{('header.log in')}</Button>
         </Link>
       )}
 
@@ -60,11 +60,11 @@ const Header = () => {
 
       <br />
       <Link href="/create" passHref>
-          <Button>{t('header.create')}</Button>
+          <Button>{('header.create')}</Button>
       </Link>
 
       <Link href="/user" passHref>
-          <Button>{t('header.user')}</Button>
+          <Button>{('header.user')}</Button>
       </Link>
       <FiltersForm />
     </header>
