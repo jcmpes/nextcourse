@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
 
-const eye = <FontAwesomeIcon icon={faEye} />;
-const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
+const eye = <FontAwesomeIcon style={{ width: '20px'}} icon={faEye} />;
+const eyeSlash = <FontAwesomeIcon style={{ width: '20px'}} icon={faEyeSlash} />;
 
 const RegisterForm = ({ onSubmit }) => {
   const [credentials, setCredentials] = useState({

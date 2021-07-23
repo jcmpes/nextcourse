@@ -11,7 +11,7 @@ const StudentPage = ({ username }) => {
       <div className="user-profile-section">
         <div className="user-profile-data">
           <div className="user-picture">
-            <Image src={userPortrait} alt="user portrait" width="80" />
+            <Image src={userPortrait} alt="user portrait" width={80} height={90} />
           </div>
           <div className="user-details">
             <h1>{username}</h1>
@@ -21,26 +21,35 @@ const StudentPage = ({ username }) => {
 
         <div className="user-profile-nav">
           <ul>
-            <Link href="/" className="my-profile-nav-item">
+            <li>
+              <Link href="" className="my-profile-nav-item">
               <a>
                 {t('users.learning')}
               </a>
-            </Link>
-            <Link href="/" className="my-profile-nav-item">
+              </Link>
+            </li>
+            
+            <li>
+              <Link href="" className="my-profile-nav-item">
               <a>
                 {t('users.wishlist')}
               </a>
-            </Link>
-            <Link href="/" className="my-profile-nav-item">
+              </Link>
+            </li>
+            <li>
+              <Link href="" className="my-profile-nav-item">
               <a>
                 {t('users.chats')}
               </a>
-            </Link>
-            <Link href="/" className="my-profile-nav-item">
+              </Link>
+            </li>
+            <li>
+              <Link href="" className="my-profile-nav-item">
               <a>
                 {t('users.edit profile')}
               </a>
-            </Link>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

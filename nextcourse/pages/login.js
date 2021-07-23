@@ -1,9 +1,8 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
 import { loginAction } from '../src/store/actions/login';
 import LoginForm from '../src/components/auth/LoginPage/LoginForm';
-import Layout from '../src/components/layout/Layout';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 function LoginPage() {
   const history = useRouter();
@@ -15,10 +14,15 @@ function LoginPage() {
   };
 
   return (
-    <>
+    <div>
+      <Head>
+        <title>My page title</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="login here"/>
+      </Head>
       <h1>Login</h1>
       <LoginForm onSubmit={handleSubmit} />
-    </>      
+    </div>
  );
 }
 

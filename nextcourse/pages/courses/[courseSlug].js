@@ -3,16 +3,21 @@ import { useRouter } from 'next/router';
 import { courseDetailAction } from '../../src/store/actions/course-detail';
 import { getCourseDetail, getUi } from '../../src/store/selectors';
 import CourseDetail from '../../src/components/courses/CourseDetailPage/CourseDetail';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Head from 'next/head';
+import { getCourse } from '../../src/api/courses';
 
 function CoursePage() {
+  const [course, setCourse] = useState(null)
   const { courseSlug } = useRouter().query;
   const { loading } = useSelector(getUi);
-  const course = useSelector((state) => getCourseDetail(state, courseSlug));
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(courseDetailAction(courseSlug));
+  // const course = useSelector((state) => getCourseDetail(state, courseSlug));
+  useEffect(async () => {
+    // dispatch(courseDetailAction(courseSlug));
+    const course = await getCourse(courseSlug);
+    setCourse(course)
+    
   }, [courseSlug, course, dispatch]);
 
   return (

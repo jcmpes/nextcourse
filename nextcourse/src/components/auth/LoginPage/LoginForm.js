@@ -5,8 +5,8 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import Link from 'next/link';
 
-const eye = <FontAwesomeIcon icon={faEye} />;
-const eyeSlash = <FontAwesomeIcon icon={faEyeSlash} />;
+const eye = <FontAwesomeIcon style={{ width: '20px'}} icon={faEye} />;
+const eyeSlash = <FontAwesomeIcon style={{ width: '20px'}} icon={faEyeSlash} />;
 
 function LoginForm({ onSubmit }) {
   const [credentials, setCredentials] = useState({

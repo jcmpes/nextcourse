@@ -1,10 +1,16 @@
+import Head from "next/head";
 import Image from "next/image";
 import  { Twitter, Facebook } from "react-social-sharing";
 import { YoutubeEmbed } from "../../shared";
 
-
 function CourseDetail({ title, video, description, content, image }) {
   return (
+    <>
+    <Head>
+      <title>My page title</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="description" content={description}/>
+    </Head>
     <div className="detail-container">
       <div className="detail-image">
         {!image 
@@ -23,6 +29,7 @@ function CourseDetail({ title, video, description, content, image }) {
         <Twitter link={window.location.href} />
       </div>
     </div>
+    </>
   )
 }
 

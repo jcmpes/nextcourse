@@ -32,53 +32,39 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Link href="/">
-        <a>
-          <Button>{t('header.home')}</Button>
-        </a>
+      <Link href="/" passHref>
+        <Button>{t('header.home')}</Button>
       </Link>
-      <Link href="/register">
-        <a>
+      <Link href="/register" passHref>
           <Button>{t('header.register')}</Button>
-        </a>
       </Link>
 
       {isLogged ? (
         <Button onClick={handleLogoutClick}>{t('header.log out')}</Button>
       ) : (
-        <Link href="/login">
-          <a>
+        <Link href="/login" passHref>
             <Button>{t('header.log in')}</Button>
-          </a>
         </Link>
       )}
 
-      <Link href="" locale="en">
-        <a>
+      <Link href="" locale="en" passHref>
           <Button type="text" onClick={switchLanguage}>
             en
           </Button>
-        </a>
       </Link>
-      <Link href="" locale="es">
-        <a>
+      <Link href="" locale="es" passHref>
           <Button type="text" onClick={switchLanguage}>
             es
           </Button>
-        </a>
       </Link>
 
       <br />
-      <Link href="/create">
-        <a>
+      <Link href="/create" passHref>
           <Button>{t('header.create')}</Button>
-        </a>
       </Link>
 
-      <Link href="/user">
-        <a>
+      <Link href="/user" passHref>
           <Button>{t('header.user')}</Button>
-        </a>
       </Link>
       <FiltersForm />
     </header>
