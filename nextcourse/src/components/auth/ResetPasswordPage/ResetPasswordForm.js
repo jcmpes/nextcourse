@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { useTranslation } from 'react-i18next';
 import { Button } from '../../shared';
 import FormField from '../../shared/FormField';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,8 +13,7 @@ const ResetPasswordForm = ({ onSubmit }) => {
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [passwordShown, setPasswordShown] = useState(false);
 
-  // const { t } = useTranslation(['global']);
-
+  
   const handleSubmit = (ev) => {
     ev.preventDefault();
     if (password === passwordConfirm) {

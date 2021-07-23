@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useTranslation } from 'react-i18next';
 import { Button, FormField } from '../../shared';
 
 const ForgotForm = ({ onSubmit }) => {
@@ -11,8 +10,6 @@ const ForgotForm = ({ onSubmit }) => {
   const handleChange = (ev) => {
     setEmail(ev.target.value);
   };
-
-  // const { t } = useTranslation(['global']);
 
   return (
     <div className="forgotForm">

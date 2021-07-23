@@ -6,10 +6,13 @@ import { logout } from '../../../api/auth';
 import { getAuth } from '../../../store/selectors';
 import { authLogout } from '../../../store/actions/logout';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useTranslation } from 'react-i18next';
 import FiltersForm from '../../FiltersForm/FiltersForm';
+import useTranslation from 'next-translate/useTranslation'
+
 
 const Header = () => {
+  const { t } = useTranslation('common')
+
   const { isLogged } = useSelector(getAuth)
   const dispatch = useDispatch();
   const history = useRouter();
@@ -20,51 +23,37 @@ const Header = () => {
     history.push('/');
   };
 
-  // const { t, i18n } = useTranslation(['global']);
-  const switchLanguage = (ev) => {
-  //   // TODO: improve this function getting available languages dinamically
-  //   if (ev.target.innerHTML === 'es') {
-  //     i18n.changeLanguage('es');
-  //   } else if (ev.target.innerHTML === 'en') {
-  //     i18n.changeLanguage('en');
-  //   }
-  };
-
   return (
     <header className="header">
       <Link href="/" passHref>
-        <Button>{('header.home')}</Button>
+        <Button>{t('header.home')}</Button>
       </Link>
       <Link href="/register" passHref>
-          <Button>{('header.register')}</Button>
+          <Button>{t('header.register')}</Button>
       </Link>
 
       {isLogged ? (
-        <Button onClick={handleLogoutClick}>{('header.log out')}</Button>
+        <Button onClick={handleLogoutClick}>{t('header.log out')}</Button>
       ) : (
         <Link href="/login" passHref>
-            <Button>{('header.log in')}</Button>
+            <Button>{t('header.log in')}</Button>
         </Link>
       )}
 
       <Link href="" locale="en" passHref>
-          <Button type="text" onClick={switchLanguage}>
-            en
-          </Button>
+          <Button>en</Button>
       </Link>
       <Link href="" locale="es" passHref>
-          <Button type="text" onClick={switchLanguage}>
-            es
-          </Button>
+          <Button>es</Button>
       </Link>
 
       <br />
       <Link href="/create" passHref>
-          <Button>{('header.create')}</Button>
+          <Button>{t('header.create')}</Button>
       </Link>
 
       <Link href="/user" passHref>
-          <Button>{('header.user')}</Button>
+          <Button>{t('header.user')}</Button>
       </Link>
       <FiltersForm />
     </header>

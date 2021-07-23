@@ -1,4 +1,3 @@
-// import { useTranslation } from 'react-i18next';
 import { Button, FormField, Checkbox } from '../../shared';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -34,8 +33,7 @@ function LoginForm({ onSubmit }) {
     setPasswordShown(passwordShown ? false : true);
   };
 
-  // const { t } = useTranslation(['global']);
-
+  
   return (
     <div className="loginForm">
       <form className="loginForm" onSubmit={handleSubmit}>

@@ -20,7 +20,8 @@ function CoursePage() {
       setCourse(course)
     }
     fetchData()
-  }, [courseSlug, course, dispatch]);
+  }, [courseSlug]);
+
 
   return (
       <div className="course-detail-page">

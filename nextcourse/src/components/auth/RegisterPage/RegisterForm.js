@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { useTranslation } from 'react-i18next';
 import { FormField, Button } from '../../shared';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -38,8 +37,7 @@ const RegisterForm = ({ onSubmit }) => {
     setPasswordShown(passwordShown ? false : true);
   };
 
-  // const { t } = useTranslation(['global']);
-
+  
   const { email, password, username } = credentials;
 
   const disabledButton =

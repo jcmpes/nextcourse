@@ -1,4 +1,3 @@
-// import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { resetPasswordAction } from '../../src/store/actions/reset-password';
 import ResetPasswordForm from '../../src/components/auth/ResetPasswordPage/ResetPasswordForm';
@@ -9,8 +8,7 @@ const ResetPasswordPage = () => {
   const history = useRouter();
   const location = useRouter();
 
-  // const { t } = useTranslation(['global']);
-
+  
   const { resetToken } = useRouter().query;
 
   const handleSubmit = (newPassword) => {

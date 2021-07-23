@@ -1,11 +1,9 @@
-// import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
 import userPortrait from '../../../public/img/user.png';
 import Image from 'next/image';
 
 const StudentPage = ({ username }) => {
-  // const { t } = useTranslation(['global']);
-
+  
   return (
     <>
       <div className="user-profile-section">

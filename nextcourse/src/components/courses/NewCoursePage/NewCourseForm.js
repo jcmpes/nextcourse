@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useTranslation } from "react-i18next";
+import useTranslation from 'next-translate/useTranslation'
 import { getAuth } from "../../../store/selectors";
 import { FormField, Button, Input } from "../../../components/shared"
 
 function NewCourseForm({ onSubmit, categories }) {
-  const { t } = useTranslation(['global']);
+  const { t } = useTranslation('common')
   const [image, setImage] = React.useState(null)
   const [courseDetails, setCourseDetails] = React.useState({
     'title': '',

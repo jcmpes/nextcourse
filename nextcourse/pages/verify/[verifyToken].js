@@ -1,14 +1,12 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-// import { useTranslation } from 'react-i18next';
 
 function VerifyPage() {
   const { verifyToken } = useRouter().query;
   const [verified, setVerified] = useState(false);
 
-  // const { t } = useTranslation(['global']);
-
+  
   useEffect(() => {
     // GET request to backend to verify the user
     fetch(
