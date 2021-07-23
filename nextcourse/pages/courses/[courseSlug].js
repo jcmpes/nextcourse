@@ -13,11 +13,12 @@ function CoursePage() {
   const { loading } = useSelector(getUi);
   const dispatch = useDispatch();
   // const course = useSelector((state) => getCourseDetail(state, courseSlug));
-  useEffect(async () => {
+  useEffect () => {
     // dispatch(courseDetailAction(courseSlug));
-    const course = await getCourse(courseSlug);
-    setCourse(course)
-    
+    async function getCourseDetail() {
+      const course = await getCourse(courseSlug);
+      setCourse(course)
+    }
   }, [courseSlug, course, dispatch]);
 
   return (

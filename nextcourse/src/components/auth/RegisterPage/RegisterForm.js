@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { FormField, Button } from '../../shared';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -38,7 +38,7 @@ const RegisterForm = ({ onSubmit }) => {
     setPasswordShown(passwordShown ? false : true);
   };
 
-  const { t } = useTranslation(['global']);
+  // const { t } = useTranslation(['global']);
 
   const { email, password, username } = credentials;
 
@@ -50,14 +50,14 @@ const RegisterForm = ({ onSubmit }) => {
       <form className="registerForm" onSubmit={handleSubmit}>
         <FormField
           type="text"
-          label={t('username') + ': '}
+          label={('username') + ': '}
           name="username"
           value={username}
           onChange={handleChange}
         />
         <FormField
           type="email"
-          label={t('email') + ': '}
+          label={('email') + ': '}
           name="email"
           value={email}
           onChange={handleChange}
@@ -65,7 +65,7 @@ const RegisterForm = ({ onSubmit }) => {
         <div className="pwd-container">
           <FormField
             type={passwordShown ? 'text' : 'password'}
-            label={t('password')}
+            label={('password')}
             name="password"
             value={credentials.password}
             onChange={handleChange}
@@ -74,7 +74,7 @@ const RegisterForm = ({ onSubmit }) => {
         <div className="pwd-confirm-container">
           <FormField
             type={passwordShown ? 'text' : 'password'}
-            label={t('confirm password') + ': '}
+            label={('confirm password') + ': '}
             name="password-confirm"
             value={passwordConfirm}
             onChange={handleChange}
@@ -87,7 +87,7 @@ const RegisterForm = ({ onSubmit }) => {
         </div>
 
         <Button type="submit" disabled={disabledButton}>
-          {t('register')}
+          {('register')}
         </Button>
       </form>
     </div>

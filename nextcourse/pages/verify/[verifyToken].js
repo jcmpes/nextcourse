@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 function VerifyPage() {
   const { verifyToken } = useRouter().query;
   const [verified, setVerified] = useState(false);
 
-  const { t } = useTranslation(['global']);
+  // const { t } = useTranslation(['global']);
 
   useEffect(() => {
     // GET request to backend to verify the user
@@ -26,14 +26,14 @@ function VerifyPage() {
         {verified ? (
           <>
             <p>
-              {t('activation succeded') + ' '}
+              {('activation succeded') + ' '}
               <Link href="/login">
-                <a>{t('log in your account')}</a>
+                <a>{('log in your account')}</a>
               </Link>
             </p>
           </>
         ) : (
-          <p>{t('activation failed')}</p>
+          <p>{('activation failed')}</p>
         )}
       </div>
   );

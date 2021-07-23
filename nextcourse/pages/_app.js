@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 import Layout from '../src/components/layout/Layout'
 import configureStore from '../src/store'
 import storage from '../src/utils/storage';
-import '../src/config/i18next-config';
+// import '../src/config/i18next-config';
 
 import '../styles/globals.css'
 import { toast, ToastContainer } from 'react-toastify';

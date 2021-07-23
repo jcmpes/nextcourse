@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { Button, FormField, Checkbox } from '../../shared';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -34,14 +34,14 @@ function LoginForm({ onSubmit }) {
     setPasswordShown(passwordShown ? false : true);
   };
 
-  const { t } = useTranslation(['global']);
+  // const { t } = useTranslation(['global']);
 
   return (
     <div className="loginForm">
       <form className="loginForm" onSubmit={handleSubmit}>
         <FormField
           type="text"
-          label={t('email')}
+          label={('email')}
           name="email"
           value={credentials.email}
           onChange={handleChange}
@@ -49,7 +49,7 @@ function LoginForm({ onSubmit }) {
         <div className="pwd-container">
           <FormField
             type={passwordShown ? 'text' : 'password'}
-            label={t('password')}
+            label={('password')}
             name="password"
             value={credentials.password}
             onChange={handleChange}
@@ -63,7 +63,7 @@ function LoginForm({ onSubmit }) {
         <Checkbox
           className={'checkbox'}
           name={'remember'}
-          text={t('remember session')}
+          text={('remember session')}
           type={'checkbox'}
           checked={credentials.remember}
           onChange={handleChange}
@@ -72,11 +72,11 @@ function LoginForm({ onSubmit }) {
           type="submit"
           disabled={!credentials.email | !credentials.password}
         >
-          {t('log in')}
+          {('log in')}
         </Button>
         <div className="password-forgotten">
           <Link href="/forgot-password">
-            <a>{t('forgot option')}</a>
+            <a>{('forgot option')}</a>
           </Link>
         </div>
       </form>
