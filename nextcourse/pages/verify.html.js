@@ -27,22 +27,17 @@ function VerifyPage() {
         {verified ? (
           <>
             <p>
-              {('activation succeded') + ' '}
+              {t('activation succeded') + ' '}
               <Link href="/login">
-                <a>{('log in your account')}</a>
+                <a>{t('log in your account')}</a>
               </Link>
             </p>
           </>
         ) : (
-          <p>{('activation failed')}</p>
+          <p>{t('activation failed')}</p>
         )}
       </div>
   );
-}
-
-// This function gets called at build time
-export async function getStaticPaths() {
-  return { paths: [], fallback: false }
 }
 
 export default VerifyPage;

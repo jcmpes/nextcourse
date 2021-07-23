@@ -9,6 +9,8 @@ import { Button } from '../components/shared';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
+import Head from 'next/head';
 
 
 function TemporaryWelcomePage() {
@@ -18,11 +20,12 @@ function TemporaryWelcomePage() {
   const { loading, error } = useSelector(getUI);
   const [courses, setCourses] = useState([]);
   const dispatch = useDispatch();
+  const { t } = useTranslation("SEO")
 
   useEffect(() => {
     dispatch(loadCoursesAction(getCourses, setCourses));
     dispatch(categoriesLoadRequest());
-  }, []);
+  }, [dispatch]);
 
   const coursesElement =
     courses && favs
@@ -41,38 +44,51 @@ function TemporaryWelcomePage() {
         })
       : [];
 
-  return error || loading 
-    ? ('Loading...')
-    : (
-      <>
-        <div
-          style={{
-            textAlign: 'center',
-            fontSize: 40,
-          }}
-        >
-          {('welcome to')}
-          {('title')}
-          {username ? `, ${username}` : ''}
-        </div>
+  return (
+    <>
+      <Head>
+        <title>{`Teach It Up: Your course platform`}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content={t('description')}/>
+        <meta property="og:image" content={'https://www.net-learning.com.ar/wp-content/uploads/2014/05/E-learning-laptop-estudiantes-1024x682.jpg'} />
+        <meta property="og:title" content={`Teach It Up: ${t('title')}`} />
+      </Head>
+      <div>
+        {error || loading 
+        ? ('Loading...')
+        : (
+          <>
+            <div
+              style={{
+                textAlign: 'center',
+                fontSize: 40,
+              }}
+            >
+              {('welcome to')}
+              {('title')}
+              {username ? `, ${username}` : ''}
+            </div>
 
-        <div>{('headline')}</div>
+            <div>{('headline')}</div>
 
-        <p>
-          Current language: <strong>{locale}</strong>
-        </p>
-        <Link href="/" locale="en" passHref>
-          <Button>{'English'}</Button>
-        </Link>
-        <Link href="/" locale="es" passHref>
-          <Button>{'Español'}</Button>
-        </Link>
+            <p>
+              Current language: <strong>{locale}</strong>
+            </p>
+            <Link href="/" locale="en" passHref>
+              <Button>{'English'}</Button>
+            </Link>
+            <Link href="/" locale="es" passHref>
+              <Button>{'Español'}</Button>
+            </Link>
 
-        {coursesElement.length === 0 && !loading
-          ? "There's no courses yet"
-          : coursesElement}
-      </>
-  );
+            {coursesElement.length === 0 && !loading
+              ? "There's no courses yet"
+              : coursesElement}
+          </>
+        )};
+      </div>
+    </>
+  )
 }
 
 export default TemporaryWelcomePage;

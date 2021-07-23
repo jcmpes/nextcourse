@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import userPortrait from '../../../public/img/user.png';
 import Image from 'next/image';
+import useTranslation from 'next-translate/useTranslation'
+
 
 const StudentPage = ({ username }) => {
+  const { t } = useTranslation('common')
+
   
   return (
     <>
@@ -13,7 +17,7 @@ const StudentPage = ({ username }) => {
           </div>
           <div className="user-details">
             <h1>{username}</h1>
-            <p>{('users.student')}</p>
+            <p>{t('users.student')}</p>
           </div>
         </div>
 
@@ -22,7 +26,7 @@ const StudentPage = ({ username }) => {
             <li>
               <Link href="" className="my-profile-nav-item">
               <a>
-                {('users.learning')}
+                {t('users.learning')}
               </a>
               </Link>
             </li>
@@ -30,21 +34,21 @@ const StudentPage = ({ username }) => {
             <li>
               <Link href="" className="my-profile-nav-item">
               <a>
-                {('users.wishlist')}
+                {t('users.wishlist')}
               </a>
               </Link>
             </li>
             <li>
               <Link href="" className="my-profile-nav-item">
               <a>
-                {('users.chats')}
+                {t('users.chats')}
               </a>
               </Link>
             </li>
             <li>
               <Link href="" className="my-profile-nav-item">
               <a>
-                {('users.edit profile')}
+                {t('users.edit profile')}
               </a>
               </Link>
             </li>
