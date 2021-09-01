@@ -8,13 +8,13 @@ function CourseDetail({ title, video, description, content, image, slug }) {
     <>
     <Head>
       <title>{`Teach It Up: ${title}`}</title>
-      <meta property='og:description' content={`Curso en Teach It Up: ${description}`} />
-      <meta property='og:image' content={image ? image : null} />
-      <meta property='og:title' content={`Teach It Up: ${title}`} />
-      {/* <meta property='og:video' content={`https://www.youtube.com/embed/${video}`} /> */}
-      <meta property='og:url' content={`http://labstract.net/courses/${slug}`} />
-      <meta name='viewport' content="initial-scale=1.0, width=device-width" />
-      <meta name='description' content={`Curso en Teach It Up: ${description}`} />
+      <meta property="og:description" content={`Curso en Teach It Up: ${description}`} />
+      <meta property="og:image" content={image ? image : null} />
+      <meta property="og:title" content={`Teach It Up: ${title}`} />
+      {/* <meta property="og:video" content={`https://www.youtube.com/embed/${video}`} /> */}
+      <meta property="og:url" content={`http://labstract.net/courses/${slug}`} />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="description" content={`Curso en Teach It Up: ${description}`} />
     </Head>
     <div className="detail-container">
       <div className="detail-image">
