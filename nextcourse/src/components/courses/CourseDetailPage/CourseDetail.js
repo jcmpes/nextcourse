@@ -11,7 +11,7 @@ function CourseDetail({ title, video, description, content, image, slug }) {
       <meta property="og:description" content={`Curso en Teach It Up: ${description}`} />
       <meta property="og:image" content={image ? image : null} />
       <meta property="og:title" content={`Teach It Up: ${title}`} />
-      {/* <meta property="og:video" content={`https://www.youtube.com/embed/${video}`} /> */}
+      <meta property="og:video" content={`https://www.youtube.com/embed/${video}`} />
       <meta property="og:url" content={`http://labstract.net/courses/${slug}`} />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name="description" content={`Curso en Teach It Up: ${description}`} />
@@ -30,8 +30,8 @@ function CourseDetail({ title, video, description, content, image, slug }) {
         {content}
       </div>
       <div className="deatail-sharer">
-        <Facebook link={window.location.href} />
-        <Twitter link={window.location.href} />
+        <Facebook link={`http://labstract.net/courses/${slug}`} />
+        <Twitter link={`http://labstract.net/courses/${slug}`} />
       </div>
     </div>
     </>
